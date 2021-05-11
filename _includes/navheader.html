@@ -8,7 +8,6 @@
             {{ site.title }}
           {%- endif -%}
       </a>
-      {% for project in site.navheader %}
       <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
         Menu
         <i class="fas fa-bars"></i>
@@ -31,7 +30,6 @@
       </div>
     </div>
   </nav>
-  {% include navmodal.html %}
   <!-- End Navigation -->
   
   <!-- Header -->
@@ -44,10 +42,12 @@
 	  {%- if site.data.sitetext[site.locale].header.text -%}
         <div class="intro-heading text-uppercase">{{ site.data.sitetext[site.locale].header.text | markdownify }}</div>
 	  {%- endif -%}
+    {% for project in site.navheader %}
 	  {%- if site.data.sitetext[site.locale].header.button -%}
         <a class="btn btn-primary btn-xl text-uppercase js-scroll-trigger" href="{{ site.data.sitetext[site.locale].header.buttonlink }}">{{ site.data.sitetext[site.locale].header.button }}</a>
 	  {%- endif -%}
       </div>
     </div>
   </header>
+  {% include navmodal.html %}
   <!-- End Header -->
